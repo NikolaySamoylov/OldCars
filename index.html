@@ -1,0 +1,117 @@
+<!-- ! - создание шаблона в html-файле -->
+<!-- инструкция для веб-браузера о то, что в этом документе html-файл -->
+<!-- клиент и сервер на одном компьютере -->
+<!DOCTYPE html>
+<!-- язык для документа html -->
+<html lang="ru">
+  <head>
+    <!-- кодировка -->
+    <meta charset="UTF-8" />
+    <!-- content="width=device-width - показывать контент по всей ширине файла -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- заголовок для html-страницы -->
+    <title>OldCars</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- добавляем JavaScript файлы, они, например, позволяют открывать кнопку, появляющуюся на мобильных устройствах (при вытянутом по вертикали веб-браузере) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- добавляем код для логотипа в браузере сверху -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <!-- добавляем свой стиль с помощью CSS -->
+    <style>
+      /* . позволяет создать класс */
+      .rounded-img {
+        width: 100%;
+        border-radius: 30%;
+        /* alpha отвечает за прозрачность (4-ая переменная в rgba) */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* padding - внутренний отступ */
+        padding: 0.6em;
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- после body добавляем навигационный блок -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <!-- href="" ("/" позволяет перейти в корневой файл index.html, но у меня так почему-то не получается - переходит в директорию рабочего стола) - URL текущего html-файла, p - paddig (внутренний отступ) -->
+        <a class="navbar-brand p-0" href="">
+          <img src="OldCars.png" alt="OldCars" width="200" />
+        </a>
+        <!-- эта кнопка появляется только на мобильных устройствах (или просто когда веб-браузер вытянут по вертикали), то есть этот блок адаптивен -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- с помощью тега ul (unordered list) создаются списки -->
+          <ul class="navbar-nav">
+            <!-- li - добавление элементов списка -->
+            <li class="nav-item">
+              <!-- active говорит о том, что эта надпись будет выделяться на сайте, как активная; href="#" - ссылка никуда не ведёт, и ничего не происходит  -->
+              <a class="nav-link active" aria-current="page" href=""
+                >Главная страница</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="top.html">Топ фильмов</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- пишем div.container и нажимаем enter, тогда создастся тег div с class container  -->
+    <!-- два и более класса пишутся через пробел в "", my-5 (m-margin, y - ось, 5 величина отступа)  -->
+    <div class="container text-center my-5">
+      <!-- добавляем ещё один класс, чтобы сузить размер текстового блока для переноса его части на новую строку и большей читабельности -->
+      <div class="row">
+        <!-- помещаем в колонку col-lg-6 (всего 12 цифр, 12 означает, что столбец будет по ширине всего родительского элемента, мы указали 6, то есть колонка будет занимать половину от родительского элемента, lg - large - для больших экранов, md (midium) - для планшетов, sm (small) - на мобильных телефонах, мы можем писать эти классы вместе, определяя ширину этого столбца от родительского контейнера на компьютере, планшете и телефоне) и размещаем её по центру mx-auto (это автоматические отступы (margin) по оси X (справа и слева)) -->
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <!-- добавляем изображение -->
+          <!-- alt - альтернеативный текст, если изображение не было загружено -->
+          <img src="main500x400.jpg" alt="Old cars" class="rounded-img" />
+          <h1 class="fw-light">Old cars</h1>
+          <p class="lead text-muted">
+            Сайт о старых машинах в фильмах. Здесь вы можете узнать, что
+            посмотреть с любимыми ретро-тачками
+          </p>
+          <!-- target открывает гиперссылку в новой вкладке -->
+          <a
+            href="https://yandex.ru/images/search?from=tabbar&text=%D1%80%D0%B5%D1%82%D1%80%D0%BE-%D1%82%D0%B0%D1%87%D0%BA%D0%B8%201970%D1%85"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            Выбрать машину
+            <!-- <button class="btn btn-primary">выбрать машину</button> -->
+          </a>
+          <a
+            href="https://yandex.ru/images/search?from=tabbar&text=%D0%A4%D0%B8%D0%BB%D1%8C%D0%BC%D1%8B%20%D1%81%20%D1%80%D0%B5%D1%82%D1%80%D0%BE-%D1%82%D0%B0%D1%87%D0%BA%D0%B0%D0%BC%D0%B8%201970%D1%85"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            Поиск фильма
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

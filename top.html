@@ -1,0 +1,179 @@
+<!-- оставляем все ссылки на внешние файлы без изменений для корректного рендеринга страницы в веб-браузере -->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TopMovies</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- добавляем код для логотипа в браузере сверху -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <style>
+      /* здесь будем модифицировать стили Bootstrap */
+      .card {
+        /* добавляем округлость для углов карточек */
+        border-radius: 1em;
+        /* центрируем текст и кнопку */
+        text-align: center;
+        /* добавляем внутренний отступ padding */
+        padding: 1em;
+      }
+      /* добавляем эффект изменения бэкграунда при наведении мышки (то есть когда наводим, меняется цвет) */
+      /* hover указывает на эффект наведения мышки на определённый элемент html */
+      .card:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      /* делаем изображения карточек круглыми */
+      /* ищем img, который находится где-то внутри html-элемента с классом card, и для всех таких изображений img мы будем использовать следующее правило */
+      .card img {
+        /* border-radius: 50%; */
+        /* изменяем ширину изображения, чтобы они не касались краёв карточки */
+        /* width: 60%; */
+        /* изображения будут слева, поэтому добавим внешний отступ margin */
+        /* margin: auto; */
+        border-radius: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- навигационный блок оставляем без изменений -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand p-0" href="index.html">
+          <img src="OldCars.png" alt="OldCars" width="200" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html"
+                >Главная страница</a
+              >
+            </li>
+            <!-- Теперь надпись "Топ фильмов" активная -->
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="/Programming/FRONTEND_LEARNING/HTML_LEARNING/top.html"
+                >Топ фильмов</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- добавляем div для отступов карточки -->
+    <div class="container my-5">
+      <!-- добавляем ещё один div для того, чтобы всё содержимое было в одной строке -->
+      <!-- если ширина экрана большая (lg-large), то в ряду будет 3 столбца; если средняя (md - medium - для планшетов) - 2 столбца; в оставльных случаях - 1 столбец -->
+      <!-- g-5 делает отступы между карточками в строке при большом экране и в столбце при малом экране -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+        <!-- добавляем ещё div, чтобы всё содержимое было в одном столбце -->
+        <div class="col">
+          <!-- добавляем карточку -->
+          <!-- не указываем фиксированную длину, чтобы сделать карточку адаптивной (изначально было <div class="card" style="width: 18rem">) -->
+          <div class="card">
+            <img
+              src="gone_in_60_seconds.jpg"
+              class="card-img-top"
+              alt="Gone in 60 Seconds"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Угнать за 60 секунд (1974)</h5>
+              <!-- lorem20 позволяет сгенерировать случайный текст длиной 20 слов -->
+              <p class="card-text">
+                Его работа - кража автомобилей. Его последний контракт: угнать
+                40 машин за одну неделю. Но полицейские не желают мириться с
+                ролью статистов - захватывающая гонка начинается!
+              </p>
+              <a
+                href="https://www.kinopoisk.ru/film/53853/"
+                target="_blank"
+                class="btn btn-primary"
+                >Страница на КиноПоиске</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- добавляем ещё div, чтобы всё содержимое было в одном столбце -->
+        <div class="col">
+          <!-- добавляем карточку -->
+          <!-- не указываем фиксированную длину, чтобы сделать карточку адаптивной (изначально было <div class="card" style="width: 18rem">) -->
+          <div class="card">
+            <img
+              src="vanishing_point.jpg"
+              class="card-img-top"
+              alt="Vanishing Point"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Исчезающая точка (1971)</h5>
+              <p class="card-text">
+                Зарабатывая на жизнь перегоном машин из города в город,
+                Ковальски получает очередное задание — доставить белый «Додж
+                Челленджер» из Денвера в Сан-Франциско. Когда его пытаются
+                остановить полицейские, Ковальски демонстративно отказывается
+                подчиняться властям и упорно уходит от преследования, следя лишь
+                за тем, чтобы никто из гонящихся за ним полицейских не погиб.
+              </p>
+              <a
+                href="https://www.kinopoisk.ru/film/24981/"
+                target="_blank"
+                class="btn btn-primary"
+                >Страница на КиноПоиске</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- добавляем ещё div, чтобы всё содержимое было в одном столбце -->
+        <div class="col">
+          <!-- добавляем карточку -->
+          <!-- не указываем фиксированную длину, чтобы сделать карточку адаптивной (изначально было <div class="card" style="width: 18rem">) -->
+          <div class="card">
+            <img src="death_proof.jpg" class="card-img-top" alt="Death Proof" />
+            <div class="card-body">
+              <h5 class="card-title">Доказательство смерти (2007)</h5>
+              <p class="card-text">
+                Три чирлидерши решают развлечься и отправляются в местную
+                забегаловку. Они даже не подозревают, что на этот раз их ждет
+                особый интерес со стороны мужчин. Каскадер Майк украдкой
+                наблюдает за ними из своего автомобиля. Он любит быструю езду и
+                не прочь подбросить до дома симпатичную девушку. А ещё он
+                считает, что выйдет сухим из воды даже в случае самой ужасной
+                аварии.
+              </p>
+              <a
+                href="https://www.kinopoisk.ru/film/273064/"
+                target="_blank"
+                class="btn btn-primary"
+                >Страница на КиноПоиске</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
